@@ -1,0 +1,82 @@
+
+h1{
+    font-family: 'Raleway', sans-serif;
+    margin:244px 0px 0px 385px;
+    margin-bottom: -7px; */
+    margin:auto ;
+    width: 40px;
+    font-size:80px ;
+    background-image:url("WhatsApp\ Image\ 2023-07-16\ at\ 13.13.44.png")  ; 
+    background-color:#F2F2F2;
+    background-repeat:no-repeat ;
+    width:436px;
+    height:452px;
+    background-position-x: 4px;
+    background-position-y:61px ;
+    animation:fadeIn 5s ;
+
+}
+h2{
+    display:block;
+    text-align: center;
+    padding:19px 0px 0px 1277px ;
+    margin: -347px 0px 0px -296px;
+    width: 538px;
+    height: 0px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 21px;
+}
+.btn{
+    color:#ffff;
+    border: 3% solid cornflowerblue;
+    width: 197px;
+    height: 48px;
+    background-color:#121212;
+    border-radius: -6px;
+    margin:332px 0px 0px 1146px ;
+    size: 1em;
+    
+}
+.btn:hover{
+    background-color: #F2F2F2;
+    color: black;
+}
+.linkden{
+    font-size: 21px;
+    text-decoration: none;
+    color:black;
+    margin:0px 0px 0px 10px;
+    margin-top:0px ;
+}
+body{
+    margin: auto;
+    
+}
+.heading{
+    font-size: 80px;
+    margin: 0px 0px 0px 526px;
+
+    font-family: 'Noto Sans', sans-serif;
+
+}
+
+/* .email{
+    margin: 24px 0px 0px 455px ;
+}
+.address{
+    margin: -24px 0px 0px 965px;
+} */
+.container{
+    margin: auto;
+    width: 80%;
+    
+
+}
+.container p{
+    width: auto;
+    margin: auto;
+}
+.header{
+    margin: auto;
+    width: 50%;
+}
