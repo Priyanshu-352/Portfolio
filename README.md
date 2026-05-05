@@ -36,7 +36,8 @@ I love turning ideas into clean, functional, and responsive web applications.
 - HTML5  
 - CSS3  
 - JavaScript  
--  Tailwind 
+-  Tailwind
+-  Backend(Render)
 
 ---
 
