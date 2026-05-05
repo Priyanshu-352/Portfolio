@@ -1,0 +1,13 @@
+question,answer
+degree, B.Tech Computer Engineering
+hi , Hello how can i help you with
+experience,3rd Year College Student
+what is his name,Priyanshu Sengupta
+give me his age,20
+projects,"Latest work: My project, Website, AI ChatBot , Resume Screener.."
+email,priyanshusengupta284@gmail.com
+where is he from,Kolkata
+skills?,"Machine Learning,Deep Learning,Data Preprocessing,Model Evaluation,Scikit-learn"
+How does your chatbot work?,"The chatbot takes user input from the frontend and sends it to a Flask backend. The backend calls the Google API, gets a response, and returns it to the user. It is customised to answer questions about my portfolio."
+his contact information,"email : priyanshusengupta284@gmail.com"
+contact,"email: priyanshusengupta284@gmail.com , github : Link Given Below ! "
