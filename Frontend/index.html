@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+  <script src="./carousel.js" defer></script>
+
+
+</head>
+<body>
+    <title>Portfolio Website </title>
+  <header class="mx-5 my-5">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <div class="nav-buttons" id="menu">
+      <button type="button" class="btn btn-primary position-relative get-in-touch-btn" style="border-radius:100px"><a href="https://form.jotform.com/242743667465467" style="text-decoration: none; color: yellowgreen " target="_blank">Get in Touch</a></button>
+    </div>
+  
+<!-- <button type="button" class="btn btn-primary position-relative " style="border-radius:100px "><a href="#" style="text-decoration: none; color: yellowgreen " target="_blank ">Get in Touch</a> -->
+</button>
+    </header>
+  <div class="main  my-5 ">
+    <h2 style="font-size: 90px;">PRIYANSHU SENGUPTA</h2>   
+      </div>
+      <div class="container">
+        <div class="section" >
+          <h1 style="color:#ffdede ; margin-bottom: 2rem;">Hi , I'm Priyanshu Sengupta<br>an Computer Engineer</h1>
+        <br><br>
+        <h1 class="text" style=" font-size: 30px; color: yellowgreen; line-height: 1.5; margin-left: 3rem;">With over a decade of experience in multiple disciplines,<br>I work with companies to create intuitive and<br>engaging digital experiences.</h1>
+        
+      </div>
+      <div class="section my-2">
+        <h1 style="color: #ffdede; font-size: 2.5rem;">I often work with:</h1>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start; margin-top: 3rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+              <path d="M15.4 27L14 25.6L23.6 16H15V14H27V26H25V17.4L15.4 27Z" fill="#ffdede"/>
+            </svg>
+            <span style="font-size: 1.8rem; color: white;">Startups</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+              <path d="M15.4 27L14 25.6L23.6 16H15V14H27V26H25V17.4L15.4 27Z" fill="#ffdede"/>
+            </svg>
+            <span style="font-size: 1.8rem; color: white;">Agencies</span>
+          </div>
+           <div style="display: flex; align-items: center; gap: 1rem;">
+            <svg width="42" height="42" viewBox="0 0 42 42" fill="none">
+              <path d="M15.4 27L14 25.6L23.6 16H15V14H27V26H25V17.4L15.4 27Z" fill="#ffdede"/>
+            </svg>
+            <span style="font-size: 1.8rem; color: white;">Oasis Infobyte</span>
+          </div>
+        </div>
+      </div>
+    
+<section class="latest-work">
+  <h1>LATEST WORK</h1>
+  <div class="stack-carousel">
+<button id="prev" class="nav-btn latest-btn">❮ Previous</button>
+
+    <div class="stack-container" id="stack">
+<div class="stack-card" data-project="1">
+      <img src="./slide-1.png">
+        <h3>My project</h3>
+<!-- Project JS chat removed -->
+      </div>
+
+
+      <div class="stack-card">
+        <img src="./slide-2.png" alt="Project 2">
+        <h3>TextUtils</h3>
+      </div>
+      <div class="stack-card">
+        <a href="https://priyanshu-352.github.io/frontend-project/"><img src="./Screenshot (7).png" alt="Frontend Project"></a>
+        <h3>Website</h3>
+      </div>
+       <div class="stack-card">
+        <img src="./slide-3.png" alt="Project 3">
+        <h3>Online Calculator</h3>
+      </div>
+      <div class="stack-card">
+        <img src="./slide-4.png" alt="Project 4">
+        <h3>Thank You</h3>
+      </div>
+    </div>
+
+<button id="next" class="nav-btn latest-btn">Next ❯</button>
+  </div>
+</section>
+
+<script src="./script.js"></script>
+<br>
+<br>
+<section class="latest-work">
+  <br>
+  <br>
+  <h1>GET IN TOUCH</h1>
+  <div style="text-align: center;">
+    <a href="https://github.com/priyanshu-352" target="_blank" rel="noopener" style="margin: 0 15px;">
+      <img src="./github-mark.png" alt="GitHub" title="GitHub" style="width: 50px; height: 50px;">
+    </a>
+    <a href="https://www.linkedin.com/in/priyanshu-sengupta-04696b223/?skipRedirect=true" target="_blank" rel="noopener" style="margin: 0 15px;">
+      <img src="./linkedin-logo-png-1854.png" alt="LinkedIn" title="LinkedIn" style="width: 50px; height: 50px;">
+    </a>
+  </div>
+</section>
+
+
+<!--  Chat UI -->
+<div id="chatbot-toggle" class="chat-toggle" onclick="toggleChatbox()"></div>
+
+<div id="chatbox" style="display:none; position:fixed; bottom:100px; right:20px; width:350px; height:450px; background:white; border-radius:20px; box-shadow:0 8px 32px rgba(0,0,0,0.3); overflow:hidden; z-index:1001; font-family:Arial;">
+  <div style="background:#4285f4; color:black; padding:15px; font-weight:bold;">Priyanshu Personal Assistant 🤖</div>
+  <div id="chat-messages" style="height:320px; overflow-y:auto; padding:15px; background:#f8f9fa;">
+<strong style="color: black;">Bot:</strong> Hi there! I’m Priyanshu’s personal chatbot.
+Feel free to ask about his skills, education, or projects.
+  </div>
+  <div style="padding:15px; border-top:1px solid #eee; display:flex;">
+    <input id="chat-input" type="text" placeholder="Type your query..." style="flex:1; padding:12px; border:1px solid #ddd; border-radius:25px; outline:none;" onkeypress="if(event.key=='Enter') sendMessage()">
+    <button onclick="sendMessage()" style="margin-left:10px; padding:12px 20px; background:#4285f4; color:white; border:none; border-radius:25px; cursor:pointer;">Send</button>
+  </div>
+</div>
+
+<script>
+let chatVisible = false;
+function toggleChatbox() {
+  chatVisible = !chatVisible;
+  document.getElementById('chatbox').style.display = chatVisible ? 'block' : 'none';
+  if (chatVisible) {
+    document.getElementById('welcome-popup').style.display = 'none';
+  }
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const messages = document.getElementById('chat-messages');
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
+  
+  messages.innerHTML += `<div style="margin-bottom:10px;"><strong>You:</strong> ${userMsg}</div>`;
+  input.value = '';
+  
+  messages.scrollTop = messages.scrollHeight;
+  
+  try {
+    const API_URL = window.location.hostname === "localhost"? "http://127.0.0.1:5000/api/chat":"https://portfolio-2x81.onrender.com/api/chat";
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: userMsg})
+    });
+    if (!res.ok) throw new Error("Server error");
+    const data = await res.json();
+messages.innerHTML += `<div style="margin-bottom:10px; background:#e3f2fd; padding:10px; border-radius:10px;"><strong style="color: black;">Bot:</strong> ${data.reply}</div>`;
+  } catch(e) {
+    messages.innerHTML += `<div style="color:red;">Error: ${e.message}</div>`;
+  }
+  messages.scrollTop = messages.scrollHeight;
+}
+
+window.addEventListener('load', function() {
+  document.getElementById('welcome-popup').style.opacity = '1';
+});
+
+function closePopup() {
+const popup = document.getElementById('welcome-popup');
+if (popup) popup.style.opacity = '1';
+}
+</script>
+
+<!-- Welcome Popup -->
+<div id="welcome-popup" class="chat-welcome-bubble">
+  <div>👋 How can I help? Click to chat!</div>
+</div>
+
+<!-- Per-project chat bubbles (data-project="1" etc.) -->
+</body>
+
+</html>
