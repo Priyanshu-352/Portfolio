@@ -54,16 +54,8 @@ Some of the projects included in this portfolio:
 The goal of this portfolio is to:
 - Present my skills and projects in a structured way
 - Build a strong developer presence
-- Showcase my readiness for internships and job opportunities (including international roles)
 
 ---
 
 
-## ⭐ Feedback
-If you like this portfolio, feel free to star ⭐ the repository or connect with me!
 
----
-
-> “Code is not just about solving problems, it’s about creating impact.”
-
----
