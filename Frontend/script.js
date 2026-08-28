@@ -1,44 +1,23 @@
-function toggle() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+// ---- Scroll reveal ----
+const revealEls = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+} else {
+    revealEls.forEach(el => el.classList.add('visible'));
 }
 
-const texts = document.querySelectorAll('.text');
-let lastScrollY = window.scrollY;
-let hasReachedBottom = false;
-
-window.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-    const scrollingDown = currentScrollY > lastScrollY;
-    const scrollingUp = currentScrollY < lastScrollY;
-
-    // Check if reached bottom once
-    if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 1) {
-        hasReachedBottom = true;
-    }
-
-    texts.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-        if (hasReachedBottom || (scrollingDown && isVisible)) {
-            el.classList.add('visible');
-        } else if (!hasReachedBottom && scrollingUp) {
-            el.classList.remove('visible');
-        }
-    });
-
-    lastScrollY = currentScrollY;
-});
-
-// Chatbot functions
-function toggleGlobalChat() {
-    const chat = document.getElementById('global-chat');
-    chat.classList.toggle('active');
-}
-
-function toggleProjectChat(projectId) {
-    const chat = document.getElementById('chat-' + projectId);
-    chat.classList.toggle('active');
+// ---- Seamless marquee loop (duplicate the track content) ----
+const track = document.getElementById('marquee-track');
+if (track) {
+    track.innerHTML += track.innerHTML; // duplicates items so translateX(-50%) loops seamlessly
 }
 

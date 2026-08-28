@@ -1,58 +1,71 @@
-const stack = document.getElementById("stack");
-const next = document.getElementById("next");
-const prev = document.getElementById("prev");
+// Horizontal projects carousel
+const track = document.getElementById("projects-track");
+const prev = document.querySelector(".projects-carousel .carousel-arrow.prev");
+const next = document.querySelector(".projects-carousel .carousel-arrow.next");
 
-// Next button
-next.addEventListener("click", () => {
-    stack.appendChild(stack.firstElementChild);
-});
+if (track && prev && next) {
+    let index = 0;
 
-// Prev button
-prev.addEventListener("click", () => {
-    stack.insertBefore(stack.lastElementChild, stack.firstElementChild);
-});
-
-// Mouse wheel support
-stack.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    if (e.deltaY > 0) {
-        stack.appendChild(stack.firstElementChild);
-    } else {
-        stack.insertBefore(stack.lastElementChild, stack.firstElementChild);
+    function cardWidth() {
+        // Each card: media + body. Compute from first child or default.
+        const first = track.querySelector(".project-card");
+        const margin = 24; // matches gap
+        return first ? first.getBoundingClientRect().width + margin : 380;
     }
-});
 
-// Initialize stack visibility for 5 cards
-function updateStack() {
-    const cards = stack.children;
-    for (let i = 0; i < cards.length; i++) {
-        const card = cards[i];
-        if (i === 0) {
-            card.style.transform = 'translateY(0px) scale(1)';
-            card.style.opacity = '1';
-            card.style.zIndex = '5';
-        } else if (i === 1) {
-            card.style.transform = 'translateY(40px) scale(0.95)';
-            card.style.opacity = '0.9';
-            card.style.zIndex = '4';
-        } else if (i === 2) {
-            card.style.transform = 'translateY(80px) scale(0.9)';
-            card.style.opacity = '0.7';
-            card.style.zIndex = '3';
-        } else if (i === 3) {
-            card.style.transform = 'translateY(120px) scale(0.85)';
-            card.style.opacity = '0.5';
-            card.style.zIndex = '2';
-        } else if (i === 4) {
-            card.style.transform = 'translateY(160px) scale(0.8)';
-            card.style.opacity = '0.3';
-            card.style.zIndex = '1';
-        }
+    function maxIndex() {
+        const n = track.querySelectorAll(".project-card").length;
+        const visible = Math.max(1, Math.floor(track.clientWidth / cardWidth()));
+        return Math.max(0, n - visible);
     }
+
+    function update() {
+        const max = maxIndex();
+        if (index > max) index = max;
+        if (index < 0) index = 0;
+        track.style.transform = `translateX(${-index * cardWidth()}px)`;
+    }
+
+    function nextSlide() {
+        index = Math.min(index + 1, maxIndex());
+        update();
+    }
+
+    function prevSlide() {
+        index = Math.max(index - 1, 0);
+        update();
+    }
+
+    next.addEventListener("click", nextSlide);
+    prev.addEventListener("click", prevSlide);
+
+    // Keyboard arrows
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
+    });
+
+    // Touch / drag
+    let startX = 0;
+    let dragging = false;
+    track.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        dragging = true;
+    });
+    track.addEventListener("touchend", (e) => {
+        if (!dragging) return;
+        dragging = false;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (dx < -40) nextSlide();
+        else if (dx > 40) prevSlide();
+    });
+
+    // Recompute on resize
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(update, 150);
+    });
+
+    update();
 }
-
-updateStack();
-
-// Update after each interaction
-const observer = new MutationObserver(updateStack);
-observer.observe(stack, { childList: true });
